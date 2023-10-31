@@ -1,0 +1,24 @@
+/* src/components/Favorites.css */
+.favorites-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px;
+  }
+  
+  .favorite-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .favorite-item button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: auto; /* Push the button to the bottom of the item */
+  }
+  
