@@ -1,10 +1,16 @@
 // src/components/Favorites.js
-import React from 'react';
-import { useSelector } from 'react-redux';
-import './Favorites.css'; // Import the CSS file for styling
+import React from "react";
+import { useSelector } from "react-redux";
+import "./Favourites.css"; // Import the CSS file for styling
+import { useNavigate } from "react-router-dom";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.items.favorites);
+  const navigate = useNavigate(); // Create a navigation function
+
+  const goBackToHome = () => {
+    navigate("/"); // Navigate to the Home page
+  };
 
   return (
     <div>
@@ -16,6 +22,10 @@ const Favorites = () => {
             <button>Delete from Favorites</button>
           </div>
         ))}
+      </div>
+      <div>
+        <button onClick={goBackToHome}>Go back to Home</button>
+        {/* Add this button to navigate back to Home */}
       </div>
     </div>
   );

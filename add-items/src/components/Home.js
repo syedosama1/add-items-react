@@ -1,14 +1,14 @@
-// src/components/Home.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorites } from '../redux/itemSlice';
-import './Home.css'; // Import the CSS file for styling
+import {  useNavigate } from 'react-router-dom'; // Import Link for navigation
+import './Home.css';
 
 const Home = () => {
   const [newItem, setNewItem] = useState('');
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items);
-
+const navigate = useNavigate()
   const handleAddItem = () => {
     if (newItem.trim() !== '') {
       const newItemObject = {
@@ -21,6 +21,9 @@ const Home = () => {
     }
   };
 
+  const goBackToHome = () => {
+    navigate("/favourite"); // Navigate to the Home page
+  };
   return (
     <div className="home-container">
       <div className="input-container">
@@ -41,6 +44,8 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <button onClick={goBackToHome}>Favourite-List</button>
+
     </div>
   );
 };
