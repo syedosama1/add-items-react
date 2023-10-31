@@ -4,3 +4,8 @@
 * Users can click the "Add to Favorites" button to add items to their favorites.
 * The "Go to Favorites" button navigates to the Favorites screen.
 * On the Favorites screen, users can view their favorite items.
+
+  # Technologies Used
+  * React.js
+  * Redux
+  * React Router
